@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Rafie & Farah Wedding</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #fffdf8;
+    color: #715b3e;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+}
+
+#opening {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    background: linear-gradient(135deg,#fffdf8,#f1e5cf);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 1s ease;
+}
+
+.open-box {
+    border: 1px solid #c5a059;
+    padding: 50px 25px;
+    width: 85%;
+    max-width: 380px;
+    background: rgba(255,255,255,0.65);
+}
+
+.open-box h1 {
+    font-family: 'Playfair Display',serif;
+    font-size: 32px;
+    margin: 20px 0;
+}
+
+.open-box p {
+    letter-spacing: 3px;
+    font-size: 11px;
+}
+
+button {
+    background: #b99a61;
+    color: white;
+    border: none;
+    padding: 13px 28px;
+    margin-top: 25px;
+    border-radius: 30px;
+    cursor: pointer;
+    letter-spacing: 1px;
+}
+
+section {
+    padding: 65px 20px;
+}
+
+.hero {
+    min-height: 100vh;
+    background: linear-gradient(#fffdf8,#f5eddf);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.small-title {
+    letter-spacing: 4px;
+    font-size: 11px;
+    margin-bottom: 30px;
+}
+
+h1 {
+    font-family: 'Playfair Display',serif;
+    font-size: 42px;
+    font-weight: 400;
+}
+
+.amp {
+    font-family: 'Playfair Display',serif;
+    font-style: italic;
+    font-size: 30px;
+    margin: 12px;
+}
+
+.gold-line {
+    width: 70px;
+    height: 1px;
+    background: #c5a059;
+    margin: 25px auto;
+}
+
+.date {
+    letter-spacing: 3px;
+    font-size: 13px;
+}
+
+h2 {
+    font-family: 'Playfair Display',serif;
+    font-size: 30px;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+.details {
+    background: #f8f3e9;
+    line-height: 2;
+}
+
+.countdown {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 30px;
+}
+
+.time-box {
+    background: white;
+    padding: 15px 10px;
+    min-width: 65px;
+    border: 1px solid #d9c69e;
+}
+
+.time-box strong {
+    display: block;
+    font-size: 22px;
+    font-family: 'Playfair Display',serif;
+}
+
+.time-box span {
+    font-size: 9px;
+}
+
+.map-button {
+    display: inline-block;
+    background: #b99a61;
+    color: white;
+    text-decoration: none;
+    padding: 13px 25px;
+    border-radius: 30px;
+    margin-top: 20px;
+}
+
+.footer {
+    background: #f1e7d5;
+    padding: 65px 20px;
+}
+
+.footer h2 {
+    font-style: italic;
+}
+
+#music {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 50;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    margin: 0;
+}
+
+@media(max-width:400px) {
+    h1 { font-size: 34px; }
+    .countdown { gap: 6px; }
+    .time-box { min-width: 58px; }
+}
+
+</style>
+</head>
+
+<body>
+
+<div id="opening">
+    <div class="open-box">
+        <p>THE WEDDING OF</p>
+        <h1>Rafie'uddin<br>&<br>Farah Ash-Syura Iman</h1>
+        <div class="gold-line"></div>
+        <p>24 DECEMBER 2026</p>
+        <button onclick="openInvitation()">BUKA JEMPUTAN</button>
+    </div>
+</div>
+
+<audio id="bgmusic" loop>
+    <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<button id="music" onclick="toggleMusic()">♫</button>
+
+<section class="hero">
+
+    <p class="small-title">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</p>
+
+    <p class="small-title">WALIMATULURUS</p>
+
+    <h1>Rafie'uddin</h1>
+
+    <div class="amp">&</div>
+
+    <h1>Farah Ash-Syura Iman</h1>
+
+    <div class="gold-line"></div>
+
+    <p>Dengan penuh kesyukuran,</p>
+    <p>kami menjemput anda ke majlis perkahwinan kami.</p>
+
+    <br>
+
+    <p class="date">24 DECEMBER 2026</p>
+
+</section>
+
+<section>
+
+    <h2>Countdown</h2>
+
+    <p>Menuju hari bahagia kami</p>
+
+    <div class="countdown">
+
+        <div class="time-box">
+            <strong id="days">0</strong>
+            <span>HARI</span>
+        </div>
+
+        <div class="time-box">
+            <strong id="hours">0</strong>
+            <span>JAM</span>
+        </div>
+
+        <div class="time-box">
+            <strong id="minutes">0</strong>
+            <span>MINIT</span>
+        </div>
+
+        <div class="time-box">
+            <strong id="seconds">0</strong>
+            <span>SAAT</span>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="details">
+
+    <h2>Butiran Majlis</h2>
+
+    <div class="gold-line"></div>
+
+    <p>KHAMIS</p>
+
+    <h2>24 December 2026</h2>
+
+    <p>11.00 Pagi – 3.00 Petang</p>
+
+    <br>
+
+    <h2>Lokasi</h2>
+
+    <p>Kompleks Desa Taqwa</p>
+    <p>Bukit Payung</p>
+
+    <a class="map-button"
+       href="https://www.google.com/maps/search/?api=1&query=Kompleks+Desa+Taqwa+Bukit+Payung"
+       target="_blank">
+       BUKA GOOGLE MAPS
+    </a>
+
+</section>
+
+<section>
+
+    <h2>Doa & Restu</h2>
+
+    <p>
+    Ya Allah, berkatilah perkahwinan kami,
+    kurniakanlah kebahagiaan dan kasih sayang
+    yang berpanjangan sehingga ke syurga.
+    </p>
+
+</section>
+
+<div class="footer">
+
+    <h2>Thank You</h2>
+
+    <div class="gold-line"></div>
+
+    <p>Kehadiran dan doa restu anda</p>
+    <p>amat kami hargai.</p>
+
+    <br>
+
+    <h2>Rafie'uddin & Farah</h2>
+
+</div>
+
+<script>
+
+function openInvitation() {
+
+    document.getElementById("opening").style.opacity = "0";
+
+    setTimeout(() => {
+        document.getElementById("opening").style.display = "none";
+    }, 1000);
+
+    document.getElementById("bgmusic").play().catch(()=>{});
+
+}
+
+function toggleMusic() {
+
+    let music = document.getElementById("bgmusic");
+
+    if(music.paused) {
+        music.play();
+    } else {
+        music.pause();
+    }
+
+}
+
+const weddingDate = new Date("2026-12-24T11:00:00+08:00").getTime();
+
+function updateCountdown() {
+
+    let now = new Date().getTime();
+
+    let distance = weddingDate - now;
+
+    if(distance <= 0) {
+        document.getElementById("days").innerHTML = "0";
+        document.getElementById("hours").innerHTML = "0";
+        document.getElementById("minutes").innerHTML = "0";
+        document.getElementById("seconds").innerHTML = "0";
+        return;
+    }
+
+    document.getElementById("days").innerHTML =
+        Math.floor(distance / (1000*60*60*24));
+
+    document.getElementById("hours").innerHTML =
+        Math.floor((distance % (1000*60*60*24)) / (1000*60*60));
+
+    document.getElementById("minutes").innerHTML =
+        Math.floor((distance % (1000*60*60)) / (1000*60));
+
+    document.getElementById("seconds").innerHTML =
+        Math.floor((distance % (1000*60)) / 1000);
+
+}
+
+setInterval(updateCountdown,1000);
+updateCountdown();
+
+</script>
+
+</body>
+</html>
